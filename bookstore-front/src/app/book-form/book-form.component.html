@@ -1,0 +1,61 @@
+<h2>Creates a new Book</h2>
+
+<form (ngSubmit)="create()">
+	<!-- Title -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Title</label>
+		<div class="col-10">
+			<input class="form-control" type="text" [(ngModel)]="book.title" name="title">
+		</div>
+	</div>
+	<!-- Description -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Description</label>
+		<div class="col-10">
+			<input class="form-control" type="text" [(ngModel)]="book.description" name="description">
+		</div>
+	</div>
+	<!-- Unit Cost -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Unit Cost</label>
+		<div class="col-10">
+			<input class="form-control" type="number" [(ngModel)]="book.unitCost" name="Unit Cost">
+		</div>
+	</div>
+	<!-- Number of Pages -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Number of Pages</label>
+		<div class="col-10">
+			<input class="form-control" type="number" [(ngModel)]="book.nbOfPages" name="Number of Pages">
+		</div>
+	</div>
+	<!-- Image URL -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Image URL</label>
+		<div class="col-10">
+			<input class="form-control" type="url" [(ngModel)]="book.imageURL" name="Image URL">
+		</div>
+	</div>
+	<!-- Language -->
+	<div class="form-group row">
+		<label class="col-2 col-form-label">Langauge</label>
+		<div class="col-10">
+			<select class="form-control" [(ngModel)]="book.Language" name="Language">
+				<option value="">SELECT</option>
+				<option value="0">ENGLISH</option>
+				<option value="1">FRENCH</option>
+				<option value="2">SPANISH</option>
+				<option value="3">PORTUGUESE</option>
+				<option value="4">ITALIAN</option>
+				<option value="5">FINISH</option>
+				<option value="6">GERMAN</option>
+				<option value="7">DEUTSCH</option>
+				<option value="8">RUSSIAN</option>
+			</select>
+		</div>
+	</div>
+	<!-- Create Button -->
+	<button type="submit" class="btn btn-primary">Create</button>
+	<!-- Cancel Button -->
+	<a class="btn btn-secondary" [routerLink]="['/book-list']" role="button">Cancel</a>
+</form>

@@ -1,0 +1,10 @@
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/util/TextUtil.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/rest/BookEndpoint.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/repository/BookRepository.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/model/Book.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/util/NumberGenerator.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/model/Book_.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/rest/JAXRSConfiguration.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/model/Language.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/filter/CorsFilter.java
+/Users/abdullahmohamed/Desktop/JavaEEGettingStarted/bookstore-back/src/main/java/com/pluralsight/bookstore/util/IsbnGenerator.java

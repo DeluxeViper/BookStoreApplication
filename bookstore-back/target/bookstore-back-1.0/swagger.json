@@ -1,0 +1,176 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "BookStore APIs exposed from a Jave EE backend",
+    "version" : "1.0.0",
+    "title" : "BookStore APIs",
+    "contact" : {
+      "name" : "Abdullah Mohamed",
+      "url" : "https://github.com/CeruleanSource",
+      "email" : "67qwert@gmail.com"
+    }
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/bookstore-back/api",
+  "tags" : [ {
+    "name" : "Book"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/books" : {
+      "get" : {
+        "tags" : [ "Book" ],
+        "summary" : "Returns all the books",
+        "description" : "",
+        "operationId" : "getBooks",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Books found",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book Resource Representation"
+              }
+            }
+          },
+          "204" : {
+            "description" : "No books found"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Book" ],
+        "summary" : "Creates a book given a JSon Book representation",
+        "description" : "",
+        "operationId" : "createBook",
+        "consumes" : [ "application/json" ],
+        "responses" : {
+          "201" : {
+            "description" : "The book is created"
+          },
+          "415" : {
+            "description" : "Unsupported Format Error"
+          }
+        }
+      }
+    },
+    "/books/count" : {
+      "get" : {
+        "tags" : [ "Book" ],
+        "summary" : "Returns the number of books",
+        "description" : "",
+        "operationId" : "countBooks",
+        "responses" : {
+          "200" : {
+            "description" : "Number of books",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          },
+          "204" : {
+            "description" : "No books found"
+          }
+        }
+      }
+    },
+    "/books/{id}" : {
+      "get" : {
+        "tags" : [ "Book" ],
+        "summary" : "Returns a book given an id",
+        "description" : "",
+        "operationId" : "getBook",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Book found",
+            "schema" : {
+              "$ref" : "#/definitions/Book Resource Representation"
+            }
+          },
+          "400" : {
+            "description" : "Invalid Request"
+          },
+          "404" : {
+            "description" : "Not found"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Book" ],
+        "summary" : "Deletes a book given an id",
+        "description" : "",
+        "operationId" : "deleteBook",
+        "responses" : {
+          "204" : {
+            "description" : "Book has been deleted"
+          },
+          "400" : {
+            "description" : "Invalid input"
+          },
+          "500" : {
+            "description" : "Book not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Book Resource Representation" : {
+      "type" : "object",
+      "required" : [ "isbn", "title" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Identifier"
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "Title of the book",
+          "minLength" : 1,
+          "maxLength" : 200
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Description of the book",
+          "minLength" : 1,
+          "maxLength" : 10000
+        },
+        "unitCost" : {
+          "type" : "number",
+          "format" : "float",
+          "description" : "Unit Cost",
+          "minimum" : 1.0
+        },
+        "isbn" : {
+          "type" : "string",
+          "description" : "isbn",
+          "minLength" : 1,
+          "maxLength" : 50
+        },
+        "publicationDate" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "Publication Date"
+        },
+        "nbOfPages" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Number of Pages"
+        },
+        "imageUrl" : {
+          "type" : "string",
+          "description" : "Image URL"
+        },
+        "language" : {
+          "type" : "string",
+          "description" : "Lanuage",
+          "enum" : [ "ENGLISH", "FRENCH", "SPANISH", "PORTUGUESE", "ITALIAN", "FINISH", "GERMAN", "DEUTSCH", "RUSSIAN" ]
+        }
+      }
+    }
+  }
+}
